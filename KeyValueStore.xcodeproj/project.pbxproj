@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0EA7246D2263984D0014F520 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7246C2263984D0014F520 /* main.cpp */; };
+		0EA72475226399A20014F520 /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA72473226399A20014F520 /* Store.cpp */; };
+		0EA724782263A0E60014F520 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA724762263A0E60014F520 /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		0EA724692263984D0014F520 /* KeyValueStore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeyValueStore; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA7246C2263984D0014F520 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0EA72473226399A20014F520 /* Store.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
+		0EA72474226399A20014F520 /* Store.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Store.hpp; sourceTree = "<group>"; };
+		0EA724762263A0E60014F520 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		0EA724772263A0E60014F520 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				0EA7246C2263984D0014F520 /* main.cpp */,
+				0EA72473226399A20014F520 /* Store.cpp */,
+				0EA72474226399A20014F520 /* Store.hpp */,
+				0EA724762263A0E60014F520 /* Node.cpp */,
+				0EA724772263A0E60014F520 /* Node.hpp */,
 			);
 			path = KeyValueStore;
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA724782263A0E60014F520 /* Node.cpp in Sources */,
 				0EA7246D2263984D0014F520 /* main.cpp in Sources */,
+				0EA72475226399A20014F520 /* Store.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,18 +251,22 @@
 		0EA724712263984D0014F520 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3G5YD4MR6;
+				DEVELOPMENT_TEAM = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		0EA724722263984D0014F520 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3G5YD4MR6;
+				DEVELOPMENT_TEAM = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
