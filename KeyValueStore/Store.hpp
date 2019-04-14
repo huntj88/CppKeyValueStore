@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include <string>
-#include <map>
 #include "Node.hpp"
 
 class Store {
@@ -19,6 +18,7 @@ public:
     ~Store();
     std::string getVal(std::string key);
     void putVal(std::string key, std::string value);
+private:
     Node * rootNode;
 };
 

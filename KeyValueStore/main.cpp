@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     store.putVal("wow", "supwow");
     store.putVal("sup1", "sup1");
 
-    std::cout << store.getVal("sup1") << std::endl;
+    std::cout << store.getVal("sup") << std::endl;
     return 0;
 }
 

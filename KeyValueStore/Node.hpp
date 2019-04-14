@@ -18,7 +18,7 @@ public:
     ~Node();
     
     void insert(Node ** rootNode, Node * newNode);
-    std::string * find(std::string key);
+    std::string * get(std::string key);
     
 private:
     Node * next;

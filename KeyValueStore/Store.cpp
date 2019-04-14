@@ -9,7 +9,7 @@
 #include "Store.hpp"
 
 std::string Store::getVal(std::string key) {
-    return *(this->rootNode->find(key));
+    return *(rootNode->get(key));
 };
 
 void Store::putVal(std::string key, std::string value) {
