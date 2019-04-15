@@ -10,36 +10,37 @@
 #include "Node.hpp"
 
 Node::Node(std::string key, std::string value) {
-    this->key = key;
-    this->value = value;
+    this->key = std::move(key);
+    this->value = std::move(value);
 }
 
-void Node::insert(Node ** rootNode, Node * newNode) {
-    
+void Node::insert(Node ** rootNode, std::string newKey, std::string newValue) {
+
+    // replace value of existing node with matching key
+    if(newKey == key) {
+        value = newValue;
+        return;
+    }
+
     // replace as the root if less than first node
-    if(newNode->key < key) {
+    if(newKey < key) {
+        auto newNode = new Node(newKey, newValue);
         newNode->next = this;
         *rootNode = newNode;
         return;
     }
-    
-    // replace value of existing node with matching key
-    if(newNode->key == key) {
-        value = newNode->value;
-        delete newNode;
-        return;
-    }
-    
+
     // if a next node exists and the new node should fit between this node and the next
-    if(next && newNode->key > key && newNode->key < next->key) {
+    if(next && newKey > key && newKey < next->key) {
+        auto newNode = new Node(newKey, newValue);
         newNode->next = next;
         next = newNode;
-    } else if(next) {
-        // if next exists delegate the next node to handle insert
-        next->insert(rootNode, newNode);
-    } else {
+    } else if(!next) {
         // if no next node, then set the new one as the next
-        next = newNode;
+        next = new Node(newKey, newValue);
+    } else {
+        // if next exists delegate the next node to handle insert
+        next->insert(rootNode, newKey, newValue);
     }
 }
 
@@ -49,7 +50,7 @@ std::string * Node::get(std::string key) {
     } else if(next) {
         return next->get(key);
     } else {
-        return NULL;
+        return (std::string *) std::string().data();
     }
 }
 

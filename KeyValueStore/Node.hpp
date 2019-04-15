@@ -9,7 +9,7 @@
 #ifndef Node_hpp
 #define Node_hpp
 
-#include <stdio.h>
+#include <cstdio>
 #include <string>
 
 class Node {
@@ -17,11 +17,11 @@ public:
     Node(std::string key, std::string value);
     ~Node();
     
-    void insert(Node ** rootNode, Node * newNode);
+    void insert(Node ** rootNode, std::string newKey, std::string newValue);
     std::string * get(std::string key);
     
 private:
-    Node * next;
+    Node * next = nullptr;
     std::string key;
     std::string value;
 };
